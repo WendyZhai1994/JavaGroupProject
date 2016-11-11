@@ -5,12 +5,12 @@ private String studentName;
 private String gender;
 private String major;
 private ArrayList<Questions> testquestions;
-public ArrayList<Questions> getTestPaper(int number, ArrayList<Questions> questions, String testtype)
+public ArrayList<Questions> getTestPaper(int number, String testtype)
 {ArrayList<Questions> testq=new ArrayList<Questions>();
 
 switch(testtype)
 {
-case "":   ；
+case "easy":  select ? from Questions where type= ?；
 case "":   ；
 case "":   ；
 case "":   ；
