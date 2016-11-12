@@ -1,0 +1,4 @@
+public class FIB extends Question
+{
+private String answer;
+}
