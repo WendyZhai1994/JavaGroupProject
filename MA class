@@ -1,4 +1,4 @@
-public class MA 
+public class MA extends Question
 {
 private String[] choice1;
 private String[] choice2;
