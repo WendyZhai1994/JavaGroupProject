@@ -1,0 +1,5 @@
+public class TF extends Question
+{
+private String[2] true;
+private String[2] false;
+}
