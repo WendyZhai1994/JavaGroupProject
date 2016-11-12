@@ -1,0 +1,6 @@
+public class Question
+{
+private int questionnumber
+private String description
+
+}
