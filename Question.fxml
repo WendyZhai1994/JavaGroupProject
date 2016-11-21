@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="360.0" prefWidth="600.0">
+         <effect>
+            <Glow />
+         </effect>
+         <children>
+            <TextField fx:id="description" alignment="CENTER" layoutY="21.0" prefHeight="169.0" prefWidth="600.0" />
+            <RadioButton fx:id="choice4" layoutX="340.0" layoutY="310.0" mnemonicParsing="false" text="RadioButton" />
+            <RadioButton fx:id="choice3" layoutX="340.0" layoutY="280.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="96.0" text="RadioButton" />
+            <RadioButton fx:id="choice1" contentDisplay="CENTER" layoutX="340.0" layoutY="220.0" mnemonicParsing="false" />
+            <RadioButton fx:id="choice2" layoutX="340.0" layoutY="250.0" mnemonicParsing="false" text="RadioButton" />
+            <Button fx:id="next" layoutX="71.0" layoutY="295.0" mnemonicParsing="false" text="Next" />
+         </children>
+      </AnchorPane>
+      <VBox layoutY="-1.0" prefHeight="30.0" prefWidth="600.0" />
+   </children>
+</AnchorPane>
