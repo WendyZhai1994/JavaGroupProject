@@ -1,0 +1,80 @@
+1,MC,E,________ is the physical aspect of the computer that can be seen,Hardware,correct,Software,incorrect,Operating system,incorrect,Application program,incorrect
+2,MC,E,__________ is the brain of a computer.,Hardware,incorrect,CPU,correct,Memory,incorrect,Disk,incorrect
+3,MC,E,FORTRAN is a programming language. What does FORTRAN stand for?___,File Translation,incorrect,Format Translation,incorrect,Formula Translation,correct,Floppy Translation,incorrect
+4,MC,E,Which of the following memories needs refreshing?___,SRAM,incorrect,DRAM,incorrect,ROM,incorrect,All of above,correct
+5,MC,E,Can you tell what passes into and out from the computer via its ports?___,Data,correct,Bytes,incorrect,Graphics,incorrect,Pictures,incorrect
+6,MC,E,Which of the items below are considered removable storage media?___,Removable hard disk cartridges,incorrect,(Magneto-optical) disk,correct,Flexible disks cartridges,incorrect,All of the above,incorrect
+7,MC,M,Which of the following is not purely output device?___,Screen,incorrect,Printer,incorrect,Speaker,correct,Plotter,incorrect
+8,MC,M,The first Macintosh computer was from____,First generation,incorrect,Second generation,incorrect,Third generation,incorrect,Fourth generation,correct
+9,MC,M,Which of the following is not a form of data?___,numbers and characters,correct,images,incorrect,sound,incorrect,none of above,incorrect
+10,MC,M,Which is not a computer classification?___,mainframe,incorrect,maxframe,correct,mini,incorrect,notebook,incorrect
+11,MC,M,The control unit of a microprocessor ___,Stores data in the memory,incorrect,Accepts input data from keyboard,incorrect,Performs arithmetic/logic function,correct,None of above,incorrect
+12,MC,M,Which of the following is internal memory?___,Disks,incorrect,Pen Drives,incorrect,RAM,incorrect,CDs,correct
+13,MC,H,Which operation is not performed by computer?___,Inputting,correct,Processing,incorrect,Controlling,incorrect,Understanding,incorrect
+14,MC,H,The magnetic storage chip used to provide non-volatile direct access storage of data and that have no moving parts are known as___,Magnetic core memory,incorrect,Magnetic tape memory,correct,Magnetic disk memory,incorrect,Magnetic bubble memory,incorrect
+15,MC,H,A collection of related instructions organized for a common purpose is referred to as___,File,incorrect,Database,incorrect,Program,correct,None of above,incorrect
+16,MC,H,The ALU of a computer normally contains a number of high speed storage element called___,Semiconductor memory,incorrect,Registers,incorrect,Hard disks,incorrect,Magnetic disk,correct
+17,MC,H,A typical personal computer used for business purposes would have__ of RAM?,4 KB,correct,16 K,incorrect,64 K,incorrect,256 K,incorrect
+18,MC,H,Which of the following memories need refresh?___,SRAM,incorrect,DRAM,correct,ROM,incorrect,None of the above,incorrect
+19,MC,H,Which of the following have low failure rate?__,mechanical devices,incorrect,electronic devices,incorrect,electro-mechanical devices,correct,None of above,incorrect
+20,MC,H,Fifth generation computer is also known as___,Knowledge information processing system,incorrect,Very large scale integration (VLSI),incorrect,Both of above,incorrect,None of above,correct
+21,MA,E,________ is the physical aspect of the computer that can be seen, Hardware,correct, Software,correct, Operating system,incorrect, Application program,incorrect
+22,MA,E,__________ is the brain of a computer., Hardware,correct, CPU,correct, Memory,correct, Disk,incorrect
+23,MA,E,The speed of CPU is measured in __________., megabytes,incorrect, gigabytes,correct, megahertz,correct, petabytes,incorrect
+24,MA,E,Which will legally declare construct and initialize an array?, int,incorrect,int [] myList ,incorrect, int myList [] [] };,correct, int myList [],correct
+25,MA,E,What is the number of students?,30,correct,29,correct,35,incorrect,55,incorrect
+26,MA,E,What is the number of kids?,3,correct,2,correct,5,correct,15,incorrect
+27,MA,M,What is the number of apples?,1,incorrect,2,correct,3,correct,4,incorrect
+28,MA,M,What is the number of schools?,3,incorrect,9,incorrect,5,correct,12,correct
+29,MA,M,What is the number of computers?,4,correct,9,correct,5,incorrect,2,incorrect
+30,MA,M,What is the number of phones?,3,correct,2,correct,5,correct,15,incorrect
+31,MA,M,What is the number of houses?,1,incorrect,2,correct,3,correct,5,incorrect
+32,MA,M,What is the number of desks?,3,incorrect,20,incorrect,35,correct,55,correct
+33,MA,H,What is the number of bottles?,31,correct,29,correct,35,incorrect,55,incorrect
+34,MA,H,What is the number of laptops?,12,correct,21,correct,31,correct,45,incorrect
+35,MA,H,What is the number of cups?,32,incorrect,29,correct,3,correct,5,incorrect
+36,MA,H,What is the number of caps?,34,incorrect,2,incorrect,4,correct,6,correct
+37,MA,H,What is the number of chairs?,56,correct,3,correct,5,incorrect,7,incorrect
+38,MA,H,What is the number of desks?,74,correct,4,correct,6,correct,8,incorrect
+39,MA,H,What is the number of spoons?,44,incorrect,5,correct,7,correct,9,incorrect
+40,MA,H,What is the number of beds?,5,incorrect,6,incorrect,8,correct,10,correct
+41,TF,E,As far as has ever been reported,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+42,TF,E,Approximately one quarter of human bones are in the feet.  Pipeye and Pupeye.  no-one has ever seen an ostrich bury its head in the sand.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+43,TF,E,Popeye’s nephews were called Peepeye Poopeye,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+44,TF,E,In ancient Rome. a special room called a vomitorium was available for diners to purge food in during meals.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+45,TF,E,The average person will shed 10 pounds of skin during their lifetime.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+46,TF,E,Sneezes regularly exceed 100 m.p.h.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+47,TF,M,A slug’s blood is green.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+48,TF,M,The Great Wall Of China is visible from the moon.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+49,TF,M,Virtually all Las Vegas gambling casinos ensure that they have no clocks.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+50,TF,M,The total surface area of two human lungs have a surface area of approximately 70 square metres.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a 
+51,TF,M,If you cry in space the tears just stick to your face.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+52,TF,M,If you cut an earthworm in half.both halves can regrow their body.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+53,TF,H,Lightning never strikes in the same place twice.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+54,TF,H, Humans can distinguish between over a trillion different smells.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a 
+55,TF,H,Adults have fewer bones than babies do.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+56,TF,H,Napoleon Bonaparte was extremely short.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+57,TF,H,Goldfish only have a memory of three seconds.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a 
+58,TF,H,There are more cells of bacteria in your body than there are human cells.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a 
+59,TF,H,Your fingernails and hair keep growing after you die.,F,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+60,TF,H,Birds are dinosaurs.,T,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+61,FIB,E,A___is used to record a business event as they occur throughout the year.,journal entry,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+62,FIB,E,Contra equity accounts have balances on the__ of the T account.,left side,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+63,FIB,E,The___  summarizes the accounting equation in report format.,balance sheet,n/a,n/a,n/a,n/a,n/a,n/a,n/a 
+64,FIB,E,Accounts are typically displayed in___format before the trial balances is drafted.,T account,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+64,FIB,E,Stockholder ownership is recorded in the__ amount.,common stock,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+66,FIB,E,Partners can take___ out of a partnership in the form of cash payments.,distributions,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+67,FIB,M,Accumulated amortization is an example of a ___that is reported on the balance sheet.,contra account,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+68,FIB,M,Interest is an example of___income reported on the income statement.,none-operating,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+69,FIB,M,Rent and sales are forms of___income reported on the income statement,operating,n/a,n/a,n/a,n/a,n/a,n/a,n/a 
+70,FIB,M,Accounts payable is a___liability reported on the balance sheet.,current,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+71,FIB,M,The ___reports activity over a period of time.,income statement,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+72,FIB,M,The___reports activity on a specific point in time.,balance sheet,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+73,FIB,H, Operating activities are reported on the___before financing activities.,cash flow statement,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+74,FIB,H,The___shows the changes in equity during a period.,statement of equity,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+75,FIB,H,Accounts payable is reported as a___on the balance sheet.,current liability,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+76,FIB,H,All financial statements have___that display the company name.name of the report. and date of activity.,headings,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+77,FIB,H,The statement of retained earnings displays___before additions and subtractions from retained earnings.,prior period adjustments,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+78,FIB,H,The ___is the first financial statement prepared during the accounting cycle.,income statement,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+79,FIB,H,The___ratio measures how fast a company can sell its inventory.,inventory turnover,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+80,FIB,H,The ___summarizes investing activities during a period. ,statement of cash flows,n/a,n/a,n/a,n/a,n/a,n/a,n/a
