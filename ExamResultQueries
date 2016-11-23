@@ -1,0 +1,272 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package teamprojectupdate;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+import java.util.Random;
+import java.util.Scanner; 
+/**
+ *
+ * @author joyzhang
+ */
+public class TeamProjectUpdate {
+
+    /**
+     * @param args the command line arguments
+     */
+    private String framework = "network";
+    private String protocol = "jdbc:derby:";    
+    Connection conn = null;
+    Statement s;
+    Statement s2;
+    Statement s3;
+    ResultSet rs = null;
+    ResultSet rs1 = null;
+    ResultSet rs2 = null;
+    ResultSet rs3 = null;
+    ResultSet rs4 = null;
+    ResultSet rs5 = null;
+    ResultSet rs6 = null;
+    ResultSet rs7 = null;
+    
+    public static void main(String[] args) {
+      TeamProjectUpdate examsHis = new TeamProjectUpdate();
+      examsHis.testDerby(args);
+    }
+
+    private void testDerby(String[] args) {
+      ArrayList<Statement> statements = new ArrayList<Statement>(); // list of Statements, PreparedStatements
+      PreparedStatement psInsert;
+      //PreparedStatement psInsert1;
+      //PreparedStatement psInsert2;
+      
+      System.out.println("Exam question starting in " + framework + " mode");     
+      try
+        {
+            Properties props = new Properties(); // connection properties
+            props.put("user", "user1");
+            props.put("password", "user1");   
+            //String dbName = "TeamProject"; // the name of the database
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/TeamProject;create=true", props);
+            s = conn.createStatement();
+            statements.add(s);
+            s.execute("drop table exams");
+            //create a table below...
+            s.execute("create table Exams(UniqueExamKey varchar(400),ExamID varchar(400),ExamGrade int, ExamType varchar(4000),StudentID varchar(400), ExamDate varchar(400), PassOrFail varchar(400))");
+            
+            System.out.println("Created table Exams");
+            psInsert = conn.prepareStatement("insert into Exams values (?, ?, ?, ?, ?, ?, ?)");
+            statements.add(psInsert); 
+  
+  
+            String[] ExamInfomation = readExamInfo();
+            System.out.print(Arrays.toString(ExamInfomation));
+            for(int i=0;i<40;i++){
+                String strr = ExamInfomation[i].trim();
+                String [] content = strr.split(",");
+                String UniqueExamKey = content[0];
+                String ExamID = content[1];
+                int ExamGrade = Integer.valueOf(content[2]);
+                String ExamType = content[3];
+                String StudentID = content[4];
+                String ExamDate = content[5];
+                String PassOrFail = content[6];
+                psInsert.setString(1,UniqueExamKey);
+                psInsert.setString(2, ExamID);
+                psInsert.setInt(3,ExamGrade);
+                psInsert.setString(4, ExamType);
+                psInsert.setString(5, StudentID);
+                psInsert.setString(6, ExamDate);
+                psInsert.setString(7, PassOrFail);
+                psInsert.executeUpdate();  
+            }
+            
+            System.out.println("avg exams scores by difficulty: ");
+            String ls_sql="select ExamType, avg(examgrade) from exams group by ExamType";
+            rs=s.executeQuery(ls_sql);
+                while(rs.next()){
+                    for(int j=1;j<3;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            System.out.println("details by pass or fail: ");
+            String ls_sql1="select * from exams order by passorfail";
+            rs=s.executeQuery(ls_sql1);
+                while(rs.next()){
+                    for(int j=1;j<8;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+            
+            System.out.println("details by month: ");
+            String ls_sql2="select * from exams order by substr(ExamDate,7,2),substr(ExamDate,4,2)";
+            rs=s.executeQuery(ls_sql2);
+                while(rs.next()){
+                    for(int j=1;j<8;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            
+            System.out.println("details by year: ");
+            String ls_sql3="select * from exams order by substr(ExamDate,7,2)";
+            rs=s.executeQuery(ls_sql3);
+                while(rs.next()){
+                    for(int j=1;j<8;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            
+            System.out.println("number of exams by year: ");
+            String ls_sql4="select substr(ExamDate,7,2), count(*) from exams group by substr(ExamDate,7,2)";
+            rs=s.executeQuery(ls_sql4);
+                while(rs.next()){
+                    for(int j=1;j<3;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            System.out.println("number of exams by month: ");
+            String ls_sql5="select substr(ExamDate,7,2),substr(ExamDate,4,2), count(studentID) from exams group by substr(ExamDate,7,2),substr(ExamDate,4,2)";
+            rs=s.executeQuery(ls_sql5);
+                while(rs.next()){
+                    for(int j=1;j<4;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            System.out.println("avg score by year: ");
+            String ls_sql6="select substr(ExamDate,7,2), avg(examgrade) from exams group by substr(ExamDate,7,2)";
+            rs=s.executeQuery(ls_sql6);
+                while(rs.next()){
+                    for(int j=1;j<3;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            System.out.println("avg score by month: ");
+            String ls_sql7="select substr(ExamDate,7,2), substr(ExamDate,4,2), avg(examgrade) from exams group by substr(ExamDate,7,2),substr(ExamDate,4,2)";
+            rs=s.executeQuery(ls_sql7);
+                while(rs.next()){
+                    for(int j=1;j<4;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            System.out.println("pass/fail by month: ");
+            String ls_sql8="select substr(ExamDate,7,2),substr(ExamDate,4,2),passorfail, count(*) from exams group by substr(ExamDate,7,2),substr(ExamDate,4,2),passorfail";
+            rs=s.executeQuery(ls_sql8);
+                while(rs.next()){
+                    for(int j=1;j<5;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            System.out.println("pass/fail by year: ");
+            String ls_sql9="select substr(ExamDate,7,2),passorfail, count(*) from exams group by substr(ExamDate,7,2),passorfail";
+            rs=s.executeQuery(ls_sql9);
+                while(rs.next()){
+                    for(int j=1;j<4;j++){
+                        System.out.print(rs.getString(j)+" "); 
+                    }
+                    System.out.println();
+                }
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+        }
+      
+        catch (SQLException sqle)
+        {
+            printSQLException(sqle);
+        } finally {
+            this.close();
+        }
+    }
+    
+
+    
+    private void printSQLException(SQLException e) {
+        while (e != null)
+        {
+            System.err.println("\n----- SQLException -----");
+            System.err.println("  SQL State:  " + e.getSQLState());
+            System.err.println("  Error Code: " + e.getErrorCode());
+            System.err.println("  Message:    " + e.getMessage());
+            e = e.getNextException();
+        }
+    }
+    
+    
+    //closes the resultsets, and the statement connections
+    private void close() {
+        try{
+            if(rs!=null){
+            rs.close();
+            rs = null;
+	    }
+	    if(s!=null){
+	     s.close();
+	     s = null;
+			}
+            if(conn!=null){
+                conn.close();
+                conn = null;
+	}
+			
+        }catch(Exception e){
+	  e.printStackTrace();
+	}
+    }
+
+    private String[] readExamInfo() {
+       int i = 0;
+        String [] eachExam = new String[40];              
+        Scanner inputUser;
+        try{
+            inputUser = new Scanner(new File("ExamInfo.txt"));
+            while(inputUser.hasNextLine()){
+                String str =inputUser.nextLine();
+                eachExam[i] = str;
+                i++; 
+            }
+        }catch(FileNotFoundException e){
+        }
+        //System.out.print(Arrays.toString(eachExam));
+        return eachExam; 
+    }
+
+}
