@@ -1,0 +1,66 @@
+package teamproject;
+
+public class Question {
+
+    public String questionNumber;
+    public String questionType;
+    public String questionLevel;
+    public String description;
+    public String[] choice1 = new String[2];
+    public String[] choice2 = new String[2];
+    public String[] choice3 = new String[2];
+    public String[] choice4 = new String[2];
+    public String answer;
+
+    public Question(String questionNumber, String questionType, String questionLevel,String d, String c11, String c12, String c21, String c22, String c31, String c32, String c41, String c42) {
+        this.questionNumber = questionNumber;
+        this.questionType = questionType;
+        this.questionLevel = questionLevel;
+        this.description = d;
+        this.choice1[0] = c11;
+        this.choice2[0] = c21;
+        this.choice3[0] = c31;
+        this.choice4[0] = c41;
+        this.choice1[1] = c12;
+        this.choice2[1] = c22;
+        this.choice3[1] = c32;
+        this.choice4[1] = c42;
+
+    }
+
+    public Question() {
+    }
+    public Question(String d, String c11, String c12, String c21, String c22, String c31, String c32, String c41, String c42, String a) {
+		this.description = d;
+		this.choice1[0] = c11;
+		this.choice2[0] = c21;
+		this.choice3[0] = c31;
+		this.choice4[0] = c41;
+		this.choice1[1] = c12;
+		this.choice2[1] = c22;
+		this.choice3[1] = c32;
+		this.choice4[1] = c42;
+		this.answer = a;
+	}
+
+
+    public Question(String questionNumber, String questionType, String questionLevel, String d, String answer) {
+        this.questionNumber = questionNumber;
+        this.questionType = questionType;
+        this.questionLevel = questionLevel;
+        this.description = d;
+        this.answer = answer;
+
+    }
+
+    
+    @Override
+    public String toString() {
+        if(this.questionType.equals("MC") ||questionType.equals("MA"))
+        return "Question{" + "No." + questionNumber + ", Type=" + questionType + ", Level=" + questionLevel + ", descrip=" + description + ", choice1=" + choice1[1] + ", choice2=" + choice2[1] + ", choice3=" + choice3[1] + ", choice4=" + choice4[1] + '}';
+    else
+        return "Question{" + "No." + questionNumber + ", Type=" + questionType + ", Level=" + questionLevel + ", descrip=" + description + ", answer=" + answer + '}';
+    }
+    
+
+}
